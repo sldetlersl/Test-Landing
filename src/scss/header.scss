@@ -1,0 +1,42 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.header {
+  @include flexbox;
+  @include justify-content(center);
+  width: 100%;
+  background: $background-gradient;
+  &__content {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    width: $widht-block;
+    height:98px;
+  }
+  &__logo {
+    .logo-image{
+    max-width: 8vw;
+    }
+  }
+  &__link {
+    @include flexbox;
+    @include justify-content(space-around);
+    @include align-items(center);
+    width: 315px;
+  }
+  & .link {
+    @include flexbox;
+    @include align-items(center);
+    @include font-source-sans('Whitney Book', 1rem, $basic-text-color-light, 325, 23px);
+    text-decoration: none;
+    & img {
+      padding-right: 10px;
+    }
+    &:hover, 
+    &:focus {
+      @include transform(1.2);
+      color: $basic-color-button;
+      outline: none;
+    }
+  }
+}

@@ -1,7 +1,44 @@
 @import "~normalize.css";
+@import "mixins.scss";
+@import "variables.scss";
 @import "fonts.scss";
-
-
-body h1{
-  font-family: 'Segoe UI Regular',sans-serif;
+@import "header.scss";
+@import "header-registration.scss";
+@import "main.scss";
+@import "footer.scss";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  @include flexbox;
+  @include justify-content(center);
+  @include flex-direction(column);
+  @include font-source-sans('Whitney Book', 24px, black, fasle, false);
+}
+.button-registration {
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  @include font-source-sans('Whitney Book', 1.10rem, $basic-text-color-light, 600, 18px);
+  padding: 16px 60px;
+  background: $basic-color-button;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+  &:hover,
+  &:active,
+  &:focus
+   {
+    @include transform(1.1);
+    border: 2px solid #fff;
+  }
+  &:active {
+    background: #f3b531;
+  }
+  &:focus {
+    outline: none;
+  }
 }

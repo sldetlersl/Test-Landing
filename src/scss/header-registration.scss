@@ -1,0 +1,40 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+.header-registration {
+  @include flexbox;
+  @include justify-content(center);
+  background: $background-gradient;
+  padding: 95px 0 55px 0;
+  &__wrapper {
+    width: $widht-block;
+    @include flexbox;
+    @include justify-content(start);
+  }
+  
+  &__content {
+    z-index: 1000;
+    width: $widht-block;
+    &-title {
+      width: 500px;
+    @include font-source-sans('Whitney Book', 3rem, $basic-text-color-light, 600, 60px);
+    }
+    &-subtitle {
+      @include font-source-sans('Whitney Book', 1.5rem, $basic-text-color-light, 350, 30px);
+      width: 500px;
+    }
+    &-button {
+      margin: 60px 0 180px 0;
+    }
+  }
+  &__image {
+    position: relative;
+    img {
+    position: absolute;
+    top: -20px;
+    left: -715px;
+    width: 689px;
+    height: 442px;
+    }
+  }
+}
