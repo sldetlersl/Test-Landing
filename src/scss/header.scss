@@ -1,6 +1,5 @@
 @import "mixins.scss";
 @import "variables.scss";
-
 .header {
   @include flexbox;
   @include justify-content(center);
@@ -10,12 +9,12 @@
     @include flexbox;
     @include justify-content(space-between);
     @include align-items(center);
-    width: $widht-block;
+    width: $width-block;
     height:98px;
   }
   &__logo {
     .logo-image{
-    max-width: 8vw;
+    max-width: 8rem;
     }
   }
   &__link {

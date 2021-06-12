@@ -15,7 +15,7 @@
       </div>
       <div class="header__link">
         <a class="header__link-clients link" href="#main-info">Клиентам</a>
-          <a class="header__link-sign-in link" href="#">
+          <a class="header__link-sign-in link popup-link" href="#">
             <img class="sign-in-image" src="/src/image/sign-in-image.png" alt="sign in">
             <span class="sign-in-text">Войти</span>
           </a>
@@ -110,5 +110,24 @@
       <img src="/src/image/footer-cars-image.png" alt="cars">
     </div>
   </footer>
+  <div class="popup">
+    <div class="popup__wrapper">
+      <form class="popup__form" action="#" method="POST" name="authorization">
+        <div class="popup__form__button-close popup-close">
+          <input type="image" src="/src/image/popup-button-close.png">
+        </div>
+        <p class="popup__form__text">Aвторизация</p>
+        <div class="popup__form__container">
+          <label for="email">E-mail</label>
+          <input type="email" placeholder="Введите e-mail" name="email" required>
+          <label for="password">Пароль</label>
+          <input type="password" placeholder="Введите пароль" name="password" required>
+          <div class="popup__form__button-entry">
+            <input type="submit" value="Войти">
+          </div>
+        </div>
+     </form>
+    </div>
+  </div>
 </body>
 </html>

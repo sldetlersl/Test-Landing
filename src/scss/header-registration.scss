@@ -1,20 +1,18 @@
 @import "mixins.scss";
 @import "variables.scss";
-
 .header-registration {
   @include flexbox;
   @include justify-content(center);
   background: $background-gradient;
   padding: 95px 0 55px 0;
   &__wrapper {
-    width: $widht-block;
+    width: $width-block;
     @include flexbox;
     @include justify-content(start);
   }
-  
   &__content {
     z-index: 1000;
-    width: $widht-block;
+    width: $width-block;
     &-title {
       width: 500px;
     @include font-source-sans('Whitney Book', 3rem, $basic-text-color-light, 600, 60px);
@@ -28,11 +26,9 @@
     }
   }
   &__image {
-    position: relative;
+    @include position(relative);
     img {
-    position: absolute;
-    top: -20px;
-    left: -715px;
+    @include position(absolute, $top: -20px, $left: -715px);
     width: 689px;
     height: 442px;
     }
