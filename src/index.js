@@ -1,3 +1,2 @@
 import './scss/index.scss'
-
-console.log('work');
+import './components/popup-sign-in'

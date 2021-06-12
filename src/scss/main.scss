@@ -4,10 +4,9 @@
   @include flexbox;
   @include justify-content(center);
   width: 100%;
-  height: 1000px;
   padding: 130px 0 130px 0;
   &__wrapper {
-    width: $widht-block;
+    width: $width-block;
   }
   &__content {
     @include flexbox;

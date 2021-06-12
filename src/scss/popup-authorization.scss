@@ -1,0 +1,95 @@
+@import "mixins.scss";
+@import "variables.scss";
+.popup {
+  @include position(fixed,$top:0, $left:0);
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(28, 24, 47, 0.3);
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3000;
+  }
+  &.close {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+  }
+  &__wrapper {
+    @include position(fixed,$top:20%, $left:35%);
+  }
+  &__form {
+    @include flexbox;
+    @include flex-direction(column);
+    width: 27vw;
+    min-height: 50vh;
+    background: $popup-background;
+    -webkit-box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
+    &__button-close{
+      @include flexbox;
+      @include justify-content(flex-end);
+      padding: 10px 10px 8px 0;
+    }
+    &__container {
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(flex-start);
+      margin: auto;
+      label {
+        @include font-source-sans('Whitney Book', 1.2rem, $basic-text-color-medium, 600, 24px);
+      }
+      input {
+        width: 23vw;
+        height: 50px;
+        background: $popup-background;
+        border: 1px solid #DDDAE7;
+        border-radius: 4px;
+        margin: 10px 0 18px 0;
+        padding: 0 0 5px 10px;
+        &::-webkit-input-placeholder {
+          @include font-source-sans('Whitney Book', 1rem, $basic-text-color-medium, 325, 16px);
+          color: $popup-placeholder-text-color;
+        }
+        &:hover,
+        &:active,
+        &:focus {
+          border: 2px solid #4E33B5;
+          outline: #4E33B5;
+        }
+      }
+    }
+    &__text {
+      @include font-source-sans('Whitney Book', 2.5rem, $basic-text-color-dark, 600, 52px);
+      text-align: center;
+      padding-bottom: 30px;
+    }
+    &__button-entry {
+      input{
+        @include flexbox;
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+        margin-top: 15px;
+        padding: 16px 60px;
+        background: $basic-color-button;
+        border-radius: 4px;
+        @include font-source-sans('Whitney Book', 1rem, $basic-text-color-light, 600, 18px);
+        text-align: center;
+        &:hover,
+        &:active,
+        &:focus
+         {
+          @include transform(1.1);
+          border: 2px solid #4E33B5;
+        }
+        &:active {
+          background: #f3b531;
+        }
+      }
+    }
+  }
+}
